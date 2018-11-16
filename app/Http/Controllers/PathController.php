@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class PathController extends Controller
 {
-    public function index()
+    public function create()
     {
-        return view('profile.create');
+        return view('path.create');
     }
 
     public function store(Request $request)
     {
-        $path = $request->file('image')->store('btc');
+        $path = $request->file('image')->store('atc');
         var_dump($request->file('image'));
     }
 }

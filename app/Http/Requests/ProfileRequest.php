@@ -13,7 +13,7 @@ class ProfileRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'photo' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2048'
         ];
+    }
+
+    /**
+     * プロフィールの保存
+     *
+     * @param ProfileRequest $request
+     * @return Response
+     */
+    public function store(ProfileRequest $request)
+    {
     }
 }
