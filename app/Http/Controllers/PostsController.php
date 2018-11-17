@@ -20,20 +20,16 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-        $path = $request->file('image')->store('images');
-
+        $path = $request->file('image')->store('public');
         $post = new Post;
         $post->title = $request->title;
         $post->body = $request->body;
         $post->path = $path;
         $post->save();
-
         // $post->path =  $request['image']->getClientost->titleOriginalName();
-        // $path = $request->file('image')->store('images');
         // var_dump($request->file('image'));
         // dd($request->file('image'));
-        // echo $path;
-        return view('posts.index');
+        return view('posts.store');
     }
 
     public function show($id)

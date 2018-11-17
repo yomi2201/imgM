@@ -15,11 +15,11 @@
       <div class="card-body">
         <h4 class="card-title">{{ $post->title }}</h4>
         <p>{{ $post->body }}</p>
+        <img src="{{ $post->path }}">
         <a href="/edit/{{ $post->id }}" class="card-link">修正</a>
         <a href="/delete/{{ $post->id }}" class="card-link">削除</a>
       </div>
     </div>
-    <img src="images/cLxEXK36csokFnH8SiqxBP0o3It3YW4V0V0QreeL.png">
     @endforeach
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
