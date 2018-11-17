@@ -7,27 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body class="p-3">
-    <h1>ブログ新規追加</h1>
+    <h1>ブログ修正</h1>
 
-    <form method="post" action="/create" enctype="multipart/form-data" >
+    <form method="post" action="/edit">
       {{ csrf_field() }}
+      <input type="hidden" class="form-control" name="id" value="{{ $post->id }}">
       <div class="form-group">
         <label for="titleInput">タイトル</label>
-        <input type="text" class="form-control" id="titleInput" name="title">
+        <input type="text" class="form-control" id="titleInput" name="title" value="{{ $post->title }}">
       </div>
       <div class="form-group">
         <label for="bodyInput">内容</label>
-        <textarea class="form-control" id="bodyInput" rows="3" name="body"></textarea>
+        <textarea class="form-control" id="bodyInput" rows="3" name="body">{{ $post->body }}</textarea>
       </div>
-      <div>
-        <input type="file" name="image" value=''>
-      </div>
-      <!-- <div class="form-group">
-        <label for="bodyInput">内容</label>
-        <textarea class="form-control" id="bodyInput" rows="3" name="body"></textarea>
-      </div> -->
-    
-    <button type="submit" class="btn btn-primary">新規追加</button>
+      <button type="submit" class="btn btn-primary">修正</button>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
