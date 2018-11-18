@@ -24,8 +24,8 @@ Route::post('edit', 'PostsController@update');
 Route::get('delete/{id}', 'PostsController@show');
 Route::post('delete', 'PostsController@delete');
 
-Route::get('profile', 'ProfileController@index');
-Route::post('profile', 'ProfileController@store');
+// Route::get('profile', 'ProfileController@index');
+// Route::post('profile', 'ProfileController@store');
 
-Route::get('pcreate', 'PathController@create');
-Route::post('pcreate', 'PathController@store');
+// Route::get('pcreate', 'PathController@create');
+// Route::post('pcreate', 'PathController@store');
